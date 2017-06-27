@@ -1,0 +1,8 @@
+Program Stok Barang
+-------------------
+
+Username	: adminstok
+Password	: batanghebat2017
+Email		: adminstok2017@gmail.com
+Database	: stokbarang
+	(md5) batanghebat2017 -> d5080ee85775a3ba16e2f3207135cfb5

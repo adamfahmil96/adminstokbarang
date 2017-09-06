@@ -21,11 +21,11 @@ class C_jenis extends CI_Controller
         $start = intval($this->input->get('start'));
 
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'c_jenis_hrv/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'c_jenis_hrv/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'C_jenis?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'C_jenis?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'c_jenis_hrv/index.html';
-            $config['first_url'] = base_url() . 'c_jenis_hrv/index.html';
+            $config['base_url'] = base_url() . 'C_jenis';
+            $config['first_url'] = base_url() . 'C_jenis';
         }
 
         $config['per_page'] = 10;

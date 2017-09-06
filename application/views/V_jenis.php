@@ -89,7 +89,7 @@
                         </table>
                         <div class="row">
                           <div class="col-md-6">
-                            <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
+                            <a class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
                         		<?php echo anchor(site_url('c_jenis_hrv/excel'), 'Excel', 'class="btn btn-primary"'); ?>
                     	    </div>
                           <div class="col-md-6 text-right">

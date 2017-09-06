@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class C_jenis extends CI_Controller
+class C_jenis_hrv extends CI_Controller
 {
     function __construct()
     {
@@ -14,9 +14,6 @@ class C_jenis extends CI_Controller
 
     public function index()
     {
-      if($this->session->userdata('logged_in')){
-        $session_data = $this->session->userdata('logged_in');
-
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
 
@@ -42,12 +39,8 @@ class C_jenis extends CI_Controller
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
-            'nama' => $session_data['nama'],
         );
-        $this->load->view('V_jenis', $data);
-  		} else{
-        redirect('C_login', 'refresh');
-      }
+        $this->load->view('c_jenis_hrv/jenis_barang_list', $data);
     }
 
     public function read($id)
@@ -55,11 +48,11 @@ class C_jenis extends CI_Controller
         $row = $this->M_jenis_hrv->get_by_id($id);
         if ($row) {
             $data = array(
-          		'id' => $row->id,
-          		'id_jenis' => $row->id_jenis,
-          		'jenis' => $row->jenis,
-          		'flag_jenis' => $row->flag_jenis,
-      	    );
+		'id' => $row->id,
+		'id_jenis' => $row->id_jenis,
+		'jenis' => $row->jenis,
+		'flag_jenis' => $row->flag_jenis,
+	    );
             $this->load->view('c_jenis_hrv/jenis_barang_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
@@ -72,11 +65,11 @@ class C_jenis extends CI_Controller
         $data = array(
             'button' => 'Create',
             'action' => site_url('c_jenis_hrv/create_action'),
-      	    'id' => set_value('id'),
-      	    'id_jenis' => set_value('id_jenis'),
-      	    'jenis' => set_value('jenis'),
-      	    'flag_jenis' => set_value('flag_jenis'),
-      	);
+	    'id' => set_value('id'),
+	    'id_jenis' => set_value('id_jenis'),
+	    'jenis' => set_value('jenis'),
+	    'flag_jenis' => set_value('flag_jenis'),
+	);
         $this->load->view('c_jenis_hrv/jenis_barang_form', $data);
     }
 
@@ -88,10 +81,10 @@ class C_jenis extends CI_Controller
             $this->create();
         } else {
             $data = array(
-          		'id_jenis' => $this->input->post('id_jenis',TRUE),
-          		'jenis' => $this->input->post('jenis',TRUE),
-          		'flag_jenis' => $this->input->post('flag_jenis',TRUE),
-      	    );
+		'id_jenis' => $this->input->post('id_jenis',TRUE),
+		'jenis' => $this->input->post('jenis',TRUE),
+		'flag_jenis' => $this->input->post('flag_jenis',TRUE),
+	    );
 
             $this->M_jenis_hrv->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
@@ -107,11 +100,11 @@ class C_jenis extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('c_jenis_hrv/update_action'),
-            		'id' => set_value('id', $row->id),
-            		'id_jenis' => set_value('id_jenis', $row->id_jenis),
-            		'jenis' => set_value('jenis', $row->jenis),
-            		'flag_jenis' => set_value('flag_jenis', $row->flag_jenis),
-      	    );
+		'id' => set_value('id', $row->id),
+		'id_jenis' => set_value('id_jenis', $row->id_jenis),
+		'jenis' => set_value('jenis', $row->jenis),
+		'flag_jenis' => set_value('flag_jenis', $row->flag_jenis),
+	    );
             $this->load->view('c_jenis_hrv/jenis_barang_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
@@ -127,10 +120,10 @@ class C_jenis extends CI_Controller
             $this->update($this->input->post('id', TRUE));
         } else {
             $data = array(
-          		'id_jenis' => $this->input->post('id_jenis',TRUE),
-          		'jenis' => $this->input->post('jenis',TRUE),
-          		'flag_jenis' => $this->input->post('flag_jenis',TRUE),
-      	    );
+		'id_jenis' => $this->input->post('id_jenis',TRUE),
+		'jenis' => $this->input->post('jenis',TRUE),
+		'flag_jenis' => $this->input->post('flag_jenis',TRUE),
+	    );
 
             $this->M_jenis_hrv->update($this->input->post('id', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
@@ -184,9 +177,9 @@ class C_jenis extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Id Jenis");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Jenis");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Flag Jenis");
+	xlsWriteLabel($tablehead, $kolomhead++, "Id Jenis");
+	xlsWriteLabel($tablehead, $kolomhead++, "Jenis");
+	xlsWriteLabel($tablehead, $kolomhead++, "Flag Jenis");
 
 	foreach ($this->M_jenis_hrv->get_all() as $data) {
             $kolombody = 0;

@@ -29,15 +29,73 @@
                       </div>
                       <!-- /.panel-heading -->
                       <div class="panel-body">
-                          <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                            <thead>
-                              <th>No</th>
-                              <th>ID Jenis</th>
-                              <th>Jenis Barang</th>
-                              <th>Menu</th>
-                            </thead>
-                          </table>
-                          <!-- /.table-responsive -->
+                        <div class="row" style="margin-bottom: 10px">
+                            <div class="col-md-4">
+                                <?php echo anchor(site_url('c_jenis_hrv/create'),'Create', 'class="btn btn-primary"'); ?>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div style="margin-top: 8px" id="message">
+                                    <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
+                                </div>
+                            </div>
+                            <div class="col-md-1 text-right">
+                            </div>
+                            <div class="col-md-3 text-right">
+                                <form action="<?php echo site_url('c_jenis_hrv/index'); ?>" class="form-inline" method="get">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
+                                        <span class="input-group-btn">
+                                            <?php
+                                                if ($q <> '')
+                                                {
+                                                    ?>
+                                                    <a href="<?php echo site_url('c_jenis_hrv'); ?>" class="btn btn-default">Reset</a>
+                                                    <?php
+                                                }
+                                            ?>
+                                          <button class="btn btn-primary" type="submit">Cari</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <table class="table table-striped table-bordered table-hover" style="margin-bottom: 10px">
+                            <tr>
+                                <th>No</th>
+                                <th>ID Jenis</th>
+                                <th>Jenis Barang</th>
+                                <th>Menu</th>
+                            </tr><?php
+                            foreach ($c_jenis_hrv_data as $c_jenis_hrv)
+                            {
+                                ?>
+                                <tr>
+                                  <td width="80px"><?php echo ++$start ?></td>
+                                  <td><?php echo $c_jenis_hrv->id_jenis ?></td>
+                                  <td><?php echo $c_jenis_hrv->jenis ?></td>
+                                  <td style="text-align:center" width="200px">
+                                    <?php
+                                    echo anchor(site_url('c_jenis_hrv/read/'.$c_jenis_hrv->id),'Lihat');
+                                    echo ' | ';
+                                    echo anchor(site_url('c_jenis_hrv/update/'.$c_jenis_hrv->id),'Ubah');
+                                    echo ' | ';
+                                    echo anchor(site_url('c_jenis_hrv/delete/'.$c_jenis_hrv->id),'Hapus','onclick="javasciprt: return confirm(\'Apakah Anda yakin ?\')"');
+                                    ?>
+                                  </td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                        </table>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
+                        		<?php echo anchor(site_url('c_jenis_hrv/excel'), 'Excel', 'class="btn btn-primary"'); ?>
+                    	    </div>
+                          <div class="col-md-6 text-right">
+                            <?php echo $pagination ?>
+                          </div>
+                        </div>
                       </div>
                       <!-- /.panel-body -->
                   </div>
@@ -80,30 +138,6 @@
     });
     </script>
 
-    <script type="text/javascript">
-      var save_method; //for save method string
-      var table;
-      $(document).ready(function() {
-        //datatables
-        dataTables-example = $('#dataTables-example').DataTable({
-          "processing": true, //Feature control the processing indicator.
-          "serverSide": true, //Feature control DataTables' server-side processing mode.
-          "order": [], //Initial no order.
-          // Load data for the table's content from an Ajax source
-          "ajax": {
-              "url": '<?php echo site_url('C_jenis/getJenis'); ?>',
-              "type": "POST"
-          },
-          //Set column definition initialisation properties.
-          "columns": [
-              {"data": "1"},
-              {"data": "id_jenis"},
-              {"data": "jenis"},
-              {"data": "X"}
-          ],
-        });
-      });
-    </script>
     <!-- <script src='<?php //echo base_url();?>assets/js/js_jenis.js'></script> -->
 </body>
 

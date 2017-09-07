@@ -105,17 +105,17 @@ class C_jenis extends CI_Controller
 
         if ($row) {
             $data = array(
-                'button' => 'Update',
-                'action' => site_url('c_jenis_hrv/update_action'),
+                'button' => 'Ubah',
+                'action' => site_url('C_jenis/update_action'),
             		'id' => set_value('id', $row->id),
             		'id_jenis' => set_value('id_jenis', $row->id_jenis),
             		'jenis' => set_value('jenis', $row->jenis),
             		'flag_jenis' => set_value('flag_jenis', $row->flag_jenis),
       	    );
-            $this->load->view('c_jenis_hrv/jenis_barang_form', $data);
+            $this->load->view('V_jenis_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('c_jenis_hrv'));
+            redirect(site_url('C_jenis'));
         }
     }
 
@@ -129,12 +129,11 @@ class C_jenis extends CI_Controller
             $data = array(
           		'id_jenis' => $this->input->post('id_jenis',TRUE),
           		'jenis' => $this->input->post('jenis',TRUE),
-          		'flag_jenis' => $this->input->post('flag_jenis',TRUE),
       	    );
 
             $this->M_jenis_hrv->update($this->input->post('id', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('c_jenis_hrv'));
+            redirect(site_url('C_jenis'));
         }
     }
 

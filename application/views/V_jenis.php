@@ -75,10 +75,8 @@
                                   <td><?php echo $c_jenis_hrv->jenis ?></td>
                                   <td style="text-align:center" width="200px">
                                     <?php
-                                    echo anchor(site_url('c_jenis_hrv/read/'.$c_jenis_hrv->id),'<i class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="Lihat"></i>');
-                                    echo ' | ';
-                                    echo anchor(site_url('c_jenis_hrv/update/'.$c_jenis_hrv->id),'<i class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Ubah"></i>');
-                                    echo ' | ';
+                                    echo anchor(site_url('C_Jenis/update/'.$c_jenis_hrv->id),'<i class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Ubah"></i>');
+                                    echo "\t\t | \t\t";
                                     echo anchor(site_url('c_jenis_hrv/delete/'.$c_jenis_hrv->id),'<i class="glyphicon glyphicon-trash" data-toggle="tooltip" title="Hapus"></i>','onclick="javasciprt: return confirm(\'Apakah Anda yakin ?\')"');
                                     ?>
                                   </td>

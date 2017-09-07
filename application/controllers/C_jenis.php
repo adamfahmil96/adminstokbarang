@@ -70,14 +70,14 @@ class C_jenis extends CI_Controller
     public function create()
     {
         $data = array(
-            'button' => 'Create',
-            'action' => site_url('c_jenis_hrv/create_action'),
+            'button' => 'Tambah',
+            'action' => site_url('C_jenis/create_action'),
       	    'id' => set_value('id'),
       	    'id_jenis' => set_value('id_jenis'),
       	    'jenis' => set_value('jenis'),
       	    'flag_jenis' => set_value('flag_jenis'),
       	);
-        $this->load->view('c_jenis_hrv/jenis_barang_form', $data);
+        $this->load->view('V_jenis_create', $data);
     }
 
     public function create_action()
@@ -95,7 +95,7 @@ class C_jenis extends CI_Controller
 
             $this->M_jenis_hrv->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('c_jenis_hrv'));
+            redirect(site_url('C_jenis'));
         }
     }
 

@@ -31,7 +31,7 @@
                       <div class="panel-body">
                         <div class="row" style="margin-bottom: 10px">
                             <div class="col-md-4">
-                                <?php echo anchor(site_url('c_jenis_hrv/create'),'Create', 'class="btn btn-primary"'); ?>
+                                <?php echo anchor(site_url('C_jenis/create'),'Tambah', 'class="btn btn-primary"'); ?>
                             </div>
                             <div class="col-md-4 text-center">
                                 <div style="margin-top: 8px" id="message">

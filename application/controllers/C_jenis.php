@@ -144,10 +144,10 @@ class C_jenis extends CI_Controller
         if ($row) {
             $this->M_jenis_hrv->delete($id);
             $this->session->set_flashdata('message', 'Delete Record Success');
-            redirect(site_url('c_jenis_hrv'));
+            redirect(site_url('C_jenis'));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('c_jenis_hrv'));
+            redirect(site_url('C_jenis'));
         }
     }
 

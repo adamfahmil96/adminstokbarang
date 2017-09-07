@@ -75,11 +75,11 @@
                                   <td><?php echo $c_jenis_hrv->jenis ?></td>
                                   <td style="text-align:center" width="200px">
                                     <?php
-                                    echo anchor(site_url('c_jenis_hrv/read/'.$c_jenis_hrv->id),'Lihat');
+                                    echo anchor(site_url('c_jenis_hrv/read/'.$c_jenis_hrv->id),'<i class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="Lihat"></i>');
                                     echo ' | ';
-                                    echo anchor(site_url('c_jenis_hrv/update/'.$c_jenis_hrv->id),'Ubah');
+                                    echo anchor(site_url('c_jenis_hrv/update/'.$c_jenis_hrv->id),'<i class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Ubah"></i>');
                                     echo ' | ';
-                                    echo anchor(site_url('c_jenis_hrv/delete/'.$c_jenis_hrv->id),'Hapus','onclick="javasciprt: return confirm(\'Apakah Anda yakin ?\')"');
+                                    echo anchor(site_url('c_jenis_hrv/delete/'.$c_jenis_hrv->id),'<i class="glyphicon glyphicon-trash" data-toggle="tooltip" title="Hapus"></i>','onclick="javasciprt: return confirm(\'Apakah Anda yakin ?\')"');
                                     ?>
                                   </td>
                                 </tr>
@@ -89,8 +89,8 @@
                         </table>
                         <div class="row">
                           <div class="col-md-6">
-                            <a class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
-                        		<?php echo anchor(site_url('c_jenis_hrv/excel'), 'Excel', 'class="btn btn-primary"'); ?>
+                            <a class="btn btn-primary">Total : <?php echo $total_rows ?></a>
+                        		<?php echo anchor(site_url('c_jenis_hrv/excel'), 'Ekspor ke Excel', 'class="btn btn-primary"'); ?>
                     	    </div>
                           <div class="col-md-6 text-right">
                             <?php echo $pagination ?>

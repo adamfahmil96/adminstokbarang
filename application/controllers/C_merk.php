@@ -145,10 +145,10 @@ class C_merk extends CI_Controller
         if ($row) {
             $this->M_merk_hrv->delete($id);
             $this->session->set_flashdata('message', 'Delete Record Success');
-            redirect(site_url('c_merk_hrv'));
+            redirect(site_url('C_merk'));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('c_merk_hrv'));
+            redirect(site_url('C_merk'));
         }
     }
 

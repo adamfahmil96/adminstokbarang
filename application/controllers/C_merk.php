@@ -105,17 +105,17 @@ class C_merk extends CI_Controller
 
         if ($row) {
             $data = array(
-                'button' => 'Update',
-                'action' => site_url('c_merk_hrv/update_action'),
+                'button' => 'Ubah',
+                'action' => site_url('C_merk/update_action'),
             		'id' => set_value('id', $row->id),
             		'id_merk' => set_value('id_merk', $row->id_merk),
             		'merk' => set_value('merk', $row->merk),
             		'flag_merk' => set_value('flag_merk', $row->flag_merk),
       	    );
-            $this->load->view('c_merk_hrv/merk_barang_form', $data);
+            $this->load->view('V_merk_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('c_merk_hrv'));
+            redirect(site_url('C_merk'));
         }
     }
 
@@ -134,7 +134,7 @@ class C_merk extends CI_Controller
 
             $this->M_merk_hrv->update($this->input->post('id', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('c_merk_hrv'));
+            redirect(site_url('C_merk'));
         }
     }
 

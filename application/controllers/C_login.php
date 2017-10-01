@@ -28,6 +28,7 @@
         $data_session = array();
         foreach ($result as $row) {
           $data_session = array(
+            'id' => $row->id,
       			'nama' => $row->name,
       			'username' => $row->username
       		);

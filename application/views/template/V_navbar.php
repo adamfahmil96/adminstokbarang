@@ -60,7 +60,7 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-user fa-fw"></i> Profil</a>
+                    <a href="<?php echo site_url('C_profil/update/1'); ?>"><i class="fa fa-user fa-fw"></i> Profil</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-gear fa-fw"></i> Pengaturan<span class="fa arrow"></span></a>

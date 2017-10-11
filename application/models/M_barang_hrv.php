@@ -28,11 +28,10 @@ class M_barang_hrv extends CI_Model
         $this->db->where($this->id, $id);
         return $this->db->get($this->table)->row();
     }
-    
+
     // get total rows
     function total_rows($q = NULL) {
         $this->db->like('id', $q);
-	$this->db->or_like('id_barang', $q);
 	$this->db->or_like('id_jenis', $q);
 	$this->db->or_like('id_merk', $q);
 	$this->db->or_like('nama_barang', $q);
@@ -49,7 +48,6 @@ class M_barang_hrv extends CI_Model
     function get_limit_data($limit, $start = 0, $q = NULL) {
         $this->db->order_by($this->id, $this->order);
         $this->db->like('id', $q);
-	$this->db->or_like('id_barang', $q);
 	$this->db->or_like('id_jenis', $q);
 	$this->db->or_like('id_merk', $q);
 	$this->db->or_like('nama_barang', $q);

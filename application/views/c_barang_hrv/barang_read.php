@@ -12,7 +12,6 @@
     <body>
         <h2 style="margin-top:0px">Barang Read</h2>
         <table class="table">
-	    <tr><td>Id Barang</td><td><?php echo $id_barang; ?></td></tr>
 	    <tr><td>Id Jenis</td><td><?php echo $id_jenis; ?></td></tr>
 	    <tr><td>Id Merk</td><td><?php echo $id_merk; ?></td></tr>
 	    <tr><td>Nama Barang</td><td><?php echo $nama_barang; ?></td></tr>

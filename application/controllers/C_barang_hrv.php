@@ -16,7 +16,7 @@ class C_barang_hrv extends CI_Controller
     {
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
-        
+
         if ($q <> '') {
             $config['base_url'] = base_url() . 'c_barang_hrv/index.html?q=' . urlencode($q);
             $config['first_url'] = base_url() . 'c_barang_hrv/index.html?q=' . urlencode($q);
@@ -43,13 +43,12 @@ class C_barang_hrv extends CI_Controller
         $this->load->view('c_barang_hrv/barang_list', $data);
     }
 
-    public function read($id) 
+    public function read($id)
     {
         $row = $this->M_barang_hrv->get_by_id($id);
         if ($row) {
             $data = array(
 		'id' => $row->id,
-		'id_barang' => $row->id_barang,
 		'id_jenis' => $row->id_jenis,
 		'id_merk' => $row->id_merk,
 		'nama_barang' => $row->nama_barang,
@@ -66,13 +65,12 @@ class C_barang_hrv extends CI_Controller
         }
     }
 
-    public function create() 
+    public function create()
     {
         $data = array(
             'button' => 'Create',
             'action' => site_url('c_barang_hrv/create_action'),
 	    'id' => set_value('id'),
-	    'id_barang' => set_value('id_barang'),
 	    'id_jenis' => set_value('id_jenis'),
 	    'id_merk' => set_value('id_merk'),
 	    'nama_barang' => set_value('nama_barang'),
@@ -84,8 +82,8 @@ class C_barang_hrv extends CI_Controller
 	);
         $this->load->view('c_barang_hrv/barang_form', $data);
     }
-    
-    public function create_action() 
+
+    public function create_action()
     {
         $this->_rules();
 
@@ -93,7 +91,6 @@ class C_barang_hrv extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'id_barang' => $this->input->post('id_barang',TRUE),
 		'id_jenis' => $this->input->post('id_jenis',TRUE),
 		'id_merk' => $this->input->post('id_merk',TRUE),
 		'nama_barang' => $this->input->post('nama_barang',TRUE),
@@ -109,8 +106,8 @@ class C_barang_hrv extends CI_Controller
             redirect(site_url('c_barang_hrv'));
         }
     }
-    
-    public function update($id) 
+
+    public function update($id)
     {
         $row = $this->M_barang_hrv->get_by_id($id);
 
@@ -119,7 +116,6 @@ class C_barang_hrv extends CI_Controller
                 'button' => 'Update',
                 'action' => site_url('c_barang_hrv/update_action'),
 		'id' => set_value('id', $row->id),
-		'id_barang' => set_value('id_barang', $row->id_barang),
 		'id_jenis' => set_value('id_jenis', $row->id_jenis),
 		'id_merk' => set_value('id_merk', $row->id_merk),
 		'nama_barang' => set_value('nama_barang', $row->nama_barang),
@@ -135,8 +131,8 @@ class C_barang_hrv extends CI_Controller
             redirect(site_url('c_barang_hrv'));
         }
     }
-    
-    public function update_action() 
+
+    public function update_action()
     {
         $this->_rules();
 
@@ -144,7 +140,6 @@ class C_barang_hrv extends CI_Controller
             $this->update($this->input->post('id', TRUE));
         } else {
             $data = array(
-		'id_barang' => $this->input->post('id_barang',TRUE),
 		'id_jenis' => $this->input->post('id_jenis',TRUE),
 		'id_merk' => $this->input->post('id_merk',TRUE),
 		'nama_barang' => $this->input->post('nama_barang',TRUE),
@@ -160,8 +155,8 @@ class C_barang_hrv extends CI_Controller
             redirect(site_url('c_barang_hrv'));
         }
     }
-    
-    public function delete($id) 
+
+    public function delete($id)
     {
         $row = $this->M_barang_hrv->get_by_id($id);
 
@@ -175,9 +170,8 @@ class C_barang_hrv extends CI_Controller
         }
     }
 
-    public function _rules() 
+    public function _rules()
     {
-	$this->form_validation->set_rules('id_barang', 'id barang', 'trim|required');
 	$this->form_validation->set_rules('id_jenis', 'id jenis', 'trim|required');
 	$this->form_validation->set_rules('id_merk', 'id merk', 'trim|required');
 	$this->form_validation->set_rules('nama_barang', 'nama barang', 'trim|required');
@@ -228,7 +222,6 @@ class C_barang_hrv extends CI_Controller
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->id_barang);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->id_jenis);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->id_merk);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->nama_barang);

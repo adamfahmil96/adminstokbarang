@@ -13,10 +13,6 @@
         <h2 style="margin-top:0px">Barang <?php echo $button ?></h2>
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
-            <label for="varchar">Id Barang <?php echo form_error('id_barang') ?></label>
-            <input type="text" class="form-control" name="id_barang" id="id_barang" placeholder="Id Barang" value="<?php echo $id_barang; ?>" />
-        </div>
-	    <div class="form-group">
             <label for="varchar">Id Jenis <?php echo form_error('id_jenis') ?></label>
             <input type="text" class="form-control" name="id_jenis" id="id_jenis" placeholder="Id Jenis" value="<?php echo $id_jenis; ?>" />
         </div>
@@ -48,8 +44,8 @@
             <label for="tinyint">Flag Barang <?php echo form_error('flag_barang') ?></label>
             <input type="text" class="form-control" name="flag_barang" id="flag_barang" placeholder="Flag Barang" value="<?php echo $flag_barang; ?>" />
         </div>
-	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
-	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
+	    <input type="hidden" name="id" value="<?php echo $id; ?>" />
+	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button>
 	    <a href="<?php echo site_url('c_barang_hrv') ?>" class="btn btn-default">Cancel</a>
 	</form>
     </body>

@@ -27,7 +27,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
                         <span class="input-group-btn">
-                            <?php 
+                            <?php
                                 if ($q <> '')
                                 {
                                     ?>
@@ -44,7 +44,6 @@
         <table class="table table-bordered" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>Id Barang</th>
 		<th>Id Jenis</th>
 		<th>Id Merk</th>
 		<th>Nama Barang</th>
@@ -60,7 +59,6 @@
                 ?>
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo $c_barang_hrv->id_barang ?></td>
 			<td><?php echo $c_barang_hrv->id_jenis ?></td>
 			<td><?php echo $c_barang_hrv->id_merk ?></td>
 			<td><?php echo $c_barang_hrv->nama_barang ?></td>
@@ -70,12 +68,12 @@
 			<td><?php echo $c_barang_hrv->waktu_update ?></td>
 			<td><?php echo $c_barang_hrv->flag_barang ?></td>
 			<td style="text-align:center" width="200px">
-				<?php 
-				echo anchor(site_url('c_barang_hrv/read/'.$c_barang_hrv->id),'Read'); 
-				echo ' | '; 
-				echo anchor(site_url('c_barang_hrv/update/'.$c_barang_hrv->id),'Update'); 
-				echo ' | '; 
-				echo anchor(site_url('c_barang_hrv/delete/'.$c_barang_hrv->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				<?php
+				echo anchor(site_url('c_barang_hrv/read/'.$c_barang_hrv->id),'Read');
+				echo ' | ';
+				echo anchor(site_url('c_barang_hrv/update/'.$c_barang_hrv->id),'Update');
+				echo ' | ';
+				echo anchor(site_url('c_barang_hrv/delete/'.$c_barang_hrv->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
 				?>
 			</td>
 		</tr>

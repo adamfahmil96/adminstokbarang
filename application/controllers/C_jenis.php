@@ -12,11 +12,20 @@ class C_jenis extends CI_Controller
         $this->load->library('form_validation');
     }
 
-    public function index()
-    {
+    private function cek_session(){
       if($this->session->userdata('logged_in')){
         $session_data = $this->session->userdata('logged_in');
+        $data['nama'] = $session_data['nama'];
+        $data['id'] = $session_data['id'];
+        return $data;
+      } else {
+        return FALSE;
+      }
+    }
 
+    public function index()
+    {
+      if($data = $this->cek_session()){
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
 
@@ -42,7 +51,8 @@ class C_jenis extends CI_Controller
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
-            'nama' => $session_data['nama'],
+            'nama' => $data['nama'],
+            'id' => $data['id'],
         );
         $this->load->view('V_jenis', $data);
   		} else{
@@ -59,6 +69,7 @@ class C_jenis extends CI_Controller
           		'id_jenis' => $row->id_jenis,
           		'jenis' => $row->jenis,
           		'flag_jenis' => $row->flag_jenis,
+              'nama' => $data['nama'],
       	    );
             $this->load->view('c_jenis_hrv/jenis_barang_read', $data);
         } else {
@@ -69,6 +80,7 @@ class C_jenis extends CI_Controller
 
     public function create()
     {
+      if($data = $this->cek_session()){
         $data = array(
             'button' => 'Tambah',
             'action' => site_url('C_jenis/create_action'),
@@ -76,8 +88,10 @@ class C_jenis extends CI_Controller
       	    'id_jenis' => set_value('id_jenis'),
       	    'jenis' => set_value('jenis'),
       	    'flag_jenis' => set_value('flag_jenis'),
+            'nama' => $data['nama'],
       	);
         $this->load->view('V_jenis_create', $data);
+      }
     }
 
     public function create_action()
@@ -101,6 +115,7 @@ class C_jenis extends CI_Controller
 
     public function update($id)
     {
+      if($data = $this->cek_session()){
         $row = $this->M_jenis_hrv->get_by_id($id);
 
         if ($row) {
@@ -111,12 +126,14 @@ class C_jenis extends CI_Controller
             		'id_jenis' => set_value('id_jenis', $row->id_jenis),
             		'jenis' => set_value('jenis', $row->jenis),
             		'flag_jenis' => set_value('flag_jenis', $row->flag_jenis),
+                'nama' => $data['nama'],
       	    );
             $this->load->view('V_jenis_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('C_jenis'));
         }
+      }
     }
 
     public function update_action()

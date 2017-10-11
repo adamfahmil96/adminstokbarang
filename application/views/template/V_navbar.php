@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="C_index"><i class="fa fa-paper-plane fa-fw"></i> Program Stok Barang</a>
+        <a class="navbar-brand" href="<?php echo site_url("C_index");?>"><i class="fa fa-paper-plane fa-fw"></i> Program Stok Barang</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -21,7 +21,7 @@
             </li>
             <li class="divider"></li>
             <li>
-              <a href="C_login/aksi_logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+              <a href="<?php echo site_url("C_login/aksi_logout");?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
             </li>
           </ul>
           <!-- /.dropdown-user -->
@@ -45,37 +45,28 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="C_index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="<?php echo site_url("C_index");?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="#">Flot Charts</a>
-                        </li>
-                        <li>
-                            <a href="#">Morris.js Charts</a>
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
+                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Barang</a>
                 </li>
                 <li>
-                    <a href="<?php echo site_url('C_profil/update/1'); ?>"><i class="fa fa-user fa-fw"></i> Profil</a>
+                    <a href="<?php echo site_url('C_profil/update/'.$id); ?>"><i class="fa fa-user fa-fw"></i> Profil</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-gear fa-fw"></i> Pengaturan<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="C_jenis">Jenis Barang</a>
+                            <a href="<?php echo site_url("C_jenis");?>">Jenis Barang</a>
                         </li>
                         <li>
-                            <a href="C_merk">Merk Barang</a>
+                            <a href="<?php echo site_url("C_merk");?>">Merk Barang</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="C_login/aksi_logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <a href="<?php echo site_url("C_login/aksi_logout");?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>
         </div>

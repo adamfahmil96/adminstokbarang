@@ -4,19 +4,19 @@
   /**
    *  Model untuk Login
    */
-  class M_jenis extends CI_Model
+  class M_merk extends CI_Model
   {
-    public function showJenis(){
+    public function showMerk(){
       $this -> db -> select('*');
-      $this -> db -> from('jenis_barang');
-      $this -> db -> where('flag_jenis', 0);
+      $this -> db -> from('merk_barang');
+      $this -> db -> where('flag_merk', 0);
       return $this->db->get()->result();
     }
 
-    public function countJenis(){
+    public function countMerk(){
       $this -> db -> select('*');
-      $this -> db -> from('jenis_barang');
-      $this -> db -> where('flag_jenis', 0);
+      $this -> db -> from('merk_barang');
+      $this -> db -> where('flag_merk', 0);
       return $this->db->count_all_results();
     }
 

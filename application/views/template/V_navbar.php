@@ -48,7 +48,7 @@
                     <a href="<?php echo site_url("C_index");?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Barang</a>
+                    <a href="<?php echo site_url("C_barang");?>"><i class="fa fa-bar-chart-o fa-fw"></i> Barang</a>
                 </li>
                 <li>
                     <a href="<?php echo site_url('C_profil/update/'.$id); ?>"><i class="fa fa-user fa-fw"></i> Profil</a>

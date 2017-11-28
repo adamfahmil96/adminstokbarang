@@ -135,10 +135,14 @@ class C_barang extends CI_Controller
     public function update($id)
     {
       if($data = $this->cek_session()){
+        $data_jenis = $this->M_jenis->showJenis();
+        $data_merk = $this->M_merk->showMerk();
         $row = $this->M_barang_hrv->get_by_id($id);
 
         if ($row) {
             $data = array(
+              'data_jenis_hrv' => $data_jenis,
+              'data_merk_hrv' => $data_merk,
               'button' => 'Update',
               'action' => site_url('C_barang/update_action'),
           		'id' => set_value('id', $row->id),
@@ -216,8 +220,8 @@ class C_barang extends CI_Controller
     public function excel()
     {
         $this->load->helper('exportexcel');
-        $namaFile = "barang.xls";
-        $judul = "barang";
+        $namaFile = "Barang.xls";
+        $judul = "Barang";
         $tablehead = 0;
         $tablebody = 1;
         $nourut = 1;
@@ -235,15 +239,14 @@ class C_barang extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Id Barang");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Id Jenis");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Id Merk");
+      	xlsWriteLabel($tablehead, $kolomhead++, "ID Jenis");
+      	xlsWriteLabel($tablehead, $kolomhead++, "ID Merk");
       	xlsWriteLabel($tablehead, $kolomhead++, "Nama Barang");
       	xlsWriteLabel($tablehead, $kolomhead++, "Jumlah Barang");
       	xlsWriteLabel($tablehead, $kolomhead++, "Harga Barang");
       	xlsWriteLabel($tablehead, $kolomhead++, "Waktu Tambah");
       	xlsWriteLabel($tablehead, $kolomhead++, "Waktu Update");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Flag Barang");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Status");
 
 	foreach ($this->M_barang_hrv->get_all() as $data) {
             $kolombody = 0;

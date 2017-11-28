@@ -90,7 +90,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <a class="btn btn-primary">Total : <?php echo $total_rows ?></a>
-                    		<?php echo anchor(site_url('c_barang_hrv/excel'), 'Excel', 'class="btn btn-primary"'); ?>
+                    		<?php echo anchor(site_url('C_barang/excel'), 'Expor ke Excel', 'class="btn btn-primary"'); ?>
                 	    </div>
                       <div class="col-md-6 text-right">
                           <?php echo $pagination ?>

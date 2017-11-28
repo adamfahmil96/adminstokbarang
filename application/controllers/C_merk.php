@@ -182,8 +182,8 @@ class C_merk extends CI_Controller
     public function excel()
     {
         $this->load->helper('exportexcel');
-        $namaFile = "merk_barang.xls";
-        $judul = "merk_barang";
+        $namaFile = "Merk_Barang.xls";
+        $judul = "Merk Barang";
         $tablehead = 0;
         $tablebody = 1;
         $nourut = 1;
@@ -201,9 +201,9 @@ class C_merk extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Id Merk");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Merk");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Flag Merk");
+      	xlsWriteLabel($tablehead, $kolomhead++, "ID Merk");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Merk Barang");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Status");
 
       	foreach ($this->M_merk_hrv->get_all() as $data) {
             $kolombody = 0;

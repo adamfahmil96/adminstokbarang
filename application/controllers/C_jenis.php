@@ -181,8 +181,8 @@ class C_jenis extends CI_Controller
     public function excel()
     {
         $this->load->helper('exportexcel');
-        $namaFile = "jenis_barang.xls";
-        $judul = "jenis_barang";
+        $namaFile = "Jenis_Barang.xls";
+        $judul = "Jenis Barang";
         $tablehead = 0;
         $tablebody = 1;
         $nourut = 1;
@@ -200,18 +200,18 @@ class C_jenis extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Id Jenis");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Jenis");
-      	xlsWriteLabel($tablehead, $kolomhead++, "Flag Jenis");
+      	xlsWriteLabel($tablehead, $kolomhead++, "ID Jenis");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Jenis Barang");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Status");
 
 	foreach ($this->M_jenis_hrv->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->id_jenis);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->jenis);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->flag_jenis);
+      	    xlsWriteLabel($tablebody, $kolombody++, $data->id_jenis);
+      	    xlsWriteLabel($tablebody, $kolombody++, $data->jenis);
+      	    xlsWriteLabel($tablebody, $kolombody++, $data->flag_jenis);
 
 	    $tablebody++;
             $nourut++;

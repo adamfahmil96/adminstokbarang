@@ -126,7 +126,6 @@ class C_barang extends CI_Controller
           		'waktu_update' => $this->input->post('waktu_update',TRUE),
           		'flag_barang' => $this->input->post('flag_barang',TRUE),
       	    );
-
             $this->M_barang_hrv->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
             redirect(site_url('C_barang'));
@@ -236,29 +235,29 @@ class C_barang extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "Id Barang");
-	xlsWriteLabel($tablehead, $kolomhead++, "Id Jenis");
-	xlsWriteLabel($tablehead, $kolomhead++, "Id Merk");
-	xlsWriteLabel($tablehead, $kolomhead++, "Nama Barang");
-	xlsWriteLabel($tablehead, $kolomhead++, "Jumlah Barang");
-	xlsWriteLabel($tablehead, $kolomhead++, "Harga Barang");
-	xlsWriteLabel($tablehead, $kolomhead++, "Waktu Tambah");
-	xlsWriteLabel($tablehead, $kolomhead++, "Waktu Update");
-	xlsWriteLabel($tablehead, $kolomhead++, "Flag Barang");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Id Barang");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Id Jenis");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Id Merk");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Nama Barang");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Jumlah Barang");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Harga Barang");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Waktu Tambah");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Waktu Update");
+      	xlsWriteLabel($tablehead, $kolomhead++, "Flag Barang");
 
 	foreach ($this->M_barang_hrv->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->id_jenis);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->id_merk);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->nama_barang);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->jumlah_barang);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->harga_barang);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->waktu_tambah);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->waktu_update);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->flag_barang);
+      	    xlsWriteLabel($tablebody, $kolombody++, $data->id_jenis);
+      	    xlsWriteLabel($tablebody, $kolombody++, $data->id_merk);
+      	    xlsWriteLabel($tablebody, $kolombody++, $data->nama_barang);
+      	    xlsWriteLabel($tablebody, $kolombody++, $data->jumlah_barang);
+      	    xlsWriteNumber($tablebody, $kolombody++, $data->harga_barang);
+      	    xlsWriteLabel($tablebody, $kolombody++, $data->waktu_tambah);
+      	    xlsWriteLabel($tablebody, $kolombody++, $data->waktu_update);
+      	    xlsWriteLabel($tablebody, $kolombody++, $data->flag_barang);
 
 	    $tablebody++;
             $nourut++;

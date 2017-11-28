@@ -6,3 +6,16 @@ Password	: batanghebat2017
 Email		: adminstok2017@gmail.com
 Database	: stokbarang
 	(md5) batanghebat2017 -> d5080ee85775a3ba16e2f3207135cfb5
+
+
+Tambahan:
+22-10-2017
+1. Entry barang
+2. Stok gudang
+	- Laporan
+3. Penjualan
+	- Ada: Tgl pembelian, nama pelanggan*, nomor telepon pelanggan*, alamat*
+	- * -> diisi khusus utk pelanggan
+	- Harus ada kode sendiri: Pelanggan (Pemesan) & Konsumen
+	- Nota: Nomor, Nama Barang, Quantity, Harga, Diskon, Total, Jumlah Keseluruhan (bawah), Cash/Non-Cash (bawahnya ada titip)*, "barang yang sudah dibeli blablabla"
+4. Update Harga

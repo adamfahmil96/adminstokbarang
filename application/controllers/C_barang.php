@@ -11,6 +11,7 @@ class C_barang extends CI_Controller
         $this->load->model('M_barang_hrv');
         $this->load->model('M_jenis');
         $this->load->model('M_merk');
+        $this->load->model('M_users_hrv');
         $this->load->library('form_validation');
     }
 
@@ -89,12 +90,14 @@ class C_barang extends CI_Controller
       if($data = $this->cek_session()){
         $data_jenis = $this->M_jenis->showJenis();
         $data_merk = $this->M_merk->showMerk();
+        $row_user = $this->M_users_hrv->get_by_id(1);
         $data = array(
             'data_jenis_hrv' => $data_jenis,
             'data_merk_hrv' => $data_merk,
             'button' => 'Create',
             'action' => site_url('C_barang/create_action'),
-      	    'id' => set_value('id'),
+      	    'id' => set_value('id', $row_user->id),
+      	    'id_barang' => set_value('id'),
       	    'id_jenis' => set_value('id_jenis'),
       	    'id_merk' => set_value('id_merk'),
       	    'nama_barang' => set_value('nama_barang'),
@@ -138,14 +141,15 @@ class C_barang extends CI_Controller
         $data_jenis = $this->M_jenis->showJenis();
         $data_merk = $this->M_merk->showMerk();
         $row = $this->M_barang_hrv->get_by_id($id);
-
+        $row_user = $this->M_users_hrv->get_by_id(1);
         if ($row) {
             $data = array(
               'data_jenis_hrv' => $data_jenis,
               'data_merk_hrv' => $data_merk,
               'button' => 'Update',
               'action' => site_url('C_barang/update_action'),
-          		'id' => set_value('id', $row->id),
+              'id' => set_value('id', $row_user->id),
+          		'id_barang' => set_value('id', $row->id),
           		'id_jenis' => set_value('id_jenis', $row->id_jenis),
           		'id_merk' => set_value('id_merk', $row->id_merk),
           		'nama_barang' => set_value('nama_barang', $row->nama_barang),

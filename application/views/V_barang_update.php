@@ -79,7 +79,7 @@
                           <input type="hidden" name="waktu_tambah" id="waktu_tambah" value="<?php echo $waktu_tambah; ?>" />
                           <input type="hidden" name="waktu_update" id="waktu_update" value="<?php date_default_timezone_set("Asia/Jakarta"); echo date('Y-m-d H:i:s'); ?>" />
                           <input type="hidden" name="flag_barang" id="flag_barang" value="<?php echo $flag_barang; ?>" />
-                    	    <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                    	    <input type="hidden" name="id" value="<?php echo $id_barang; ?>" />
                     	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button>
                     	    <a href="<?php echo site_url('C_barang') ?>" class="btn btn-default">Cancel</a>
                       	</form>

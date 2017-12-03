@@ -48,22 +48,28 @@
                     <a href="<?php echo site_url("C_index");?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="<?php echo site_url("C_barang");?>"><i class="fa fa-bar-chart-o fa-fw"></i> Barang</a>
-                </li>
-                <li>
-                    <a href="<?php echo site_url('C_profil/update/'.$id); ?>"><i class="fa fa-user fa-fw"></i> Profil</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-gear fa-fw"></i> Pengaturan<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-th-list fa-fw"></i> Barang<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="<?php echo site_url("C_jenis");?>">Jenis Barang</a>
+                            <a href="<?php echo site_url("C_barang/create");?>"><i class="fa fa-plus fa-fw"></i> Tambah Barang</a>
                         </li>
                         <li>
-                            <a href="<?php echo site_url("C_merk");?>">Merk Barang</a>
+                            <a href="<?php echo site_url("C_barang");?>"><i class="fa fa-book fa-fw"></i> Stok Barang</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo site_url("C_jenis");?>"><i class="fa fa-tag fa-fw"></i> Jenis Barang</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo site_url("C_merk");?>"><i class="fa fa-tags fa-fw"></i> Merk Barang</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Penjualan</a>
+                </li>
+                <li>
+                    <a href="<?php echo site_url('C_profil/update/'.$id); ?>"><i class="fa fa-user fa-fw"></i> Profil</a>
                 </li>
                 <li>
                     <a href="<?php echo site_url("C_login/aksi_logout");?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>

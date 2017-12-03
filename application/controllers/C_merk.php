@@ -9,6 +9,7 @@ class C_merk extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_merk_hrv');
+        $this->load->model('M_users_hrv');
         $this->load->library('form_validation');
     }
 
@@ -81,10 +82,12 @@ class C_merk extends CI_Controller
     public function create()
     {
       if($data = $this->cek_session()){
+        $row_user = $this->M_users_hrv->get_by_id(1);
         $data = array(
             'button' => 'Tambah',
             'action' => site_url('C_merk/create_action'),
-      	    'id' => set_value('id'),
+      	    'id' => set_value('id', $row_user->id),
+      	    'id_merk_barang' => set_value('id'),
       	    'id_merk' => set_value('id_merk'),
       	    'merk' => set_value('merk'),
       	    'flag_merk' => set_value('flag_merk'),
@@ -117,12 +120,13 @@ class C_merk extends CI_Controller
     {
       if($data = $this->cek_session()){
         $row = $this->M_merk_hrv->get_by_id($id);
-
+        $row_user = $this->M_users_hrv->get_by_id(1);
         if ($row) {
             $data = array(
                 'button' => 'Ubah',
                 'action' => site_url('C_merk/update_action'),
-            		'id' => set_value('id', $row->id),
+                'id' => set_value('id', $row_user->id),
+            		'id_merk_barang' => set_value('id', $row->id),
             		'id_merk' => set_value('id_merk', $row->id_merk),
             		'merk' => set_value('merk', $row->merk),
             		'flag_merk' => set_value('flag_merk', $row->flag_merk),

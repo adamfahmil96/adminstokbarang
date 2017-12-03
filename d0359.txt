@@ -19,3 +19,14 @@ Tambahan:
 	- Harus ada kode sendiri: Pelanggan (Pemesan) & Konsumen
 	- Nota: Nomor, Nama Barang, Quantity, Harga, Diskon, Total, Jumlah Keseluruhan (bawah), Cash/Non-Cash (bawahnya ada titip)*, "barang yang sudah dibeli blablabla"
 4. Update Harga
+
+
+Catatan (02-12-2017)
+1. Pembuatan tabel "pembeli", isinya:
+		- id	int(255) Auto Increment
+		- id_pembeli	varchar(100)
+		- nama_pembeli	varchar(100)
+		- alamat_pembeli	varchar(200)
+		- telp_pembeli	varchar(50)
+		- status_pembeli	varchar(50)
+		- flag_pembeli	tinyint(4)

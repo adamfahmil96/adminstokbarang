@@ -9,6 +9,7 @@ class C_jenis extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_jenis_hrv');
+        $this->load->model('M_users_hrv');
         $this->load->library('form_validation');
     }
 
@@ -81,10 +82,12 @@ class C_jenis extends CI_Controller
     public function create()
     {
       if($data = $this->cek_session()){
+        $row_user = $this->M_users_hrv->get_by_id(1);
         $data = array(
             'button' => 'Tambah',
             'action' => site_url('C_jenis/create_action'),
-      	    'id' => set_value('id'),
+      	    'id' => set_value('id', $row_user->id),
+      	    'id_jenis_barang' => set_value('id'),
       	    'id_jenis' => set_value('id_jenis'),
       	    'jenis' => set_value('jenis'),
       	    'flag_jenis' => set_value('flag_jenis'),
@@ -117,12 +120,13 @@ class C_jenis extends CI_Controller
     {
       if($data = $this->cek_session()){
         $row = $this->M_jenis_hrv->get_by_id($id);
-
+        $row_user = $this->M_users_hrv->get_by_id(1);
         if ($row) {
             $data = array(
                 'button' => 'Ubah',
                 'action' => site_url('C_jenis/update_action'),
-            		'id' => set_value('id', $row->id),
+            		'id' => set_value('id', $row_user->id),
+            		'id_jenis_barang' => set_value('id', $row->id),
             		'id_jenis' => set_value('id_jenis', $row->id_jenis),
             		'jenis' => set_value('jenis', $row->jenis),
             		'flag_jenis' => set_value('flag_jenis', $row->flag_jenis),

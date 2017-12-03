@@ -39,7 +39,7 @@
                                 <input type="text" class="form-control" name="merk" id="merk" placeholder="Merk Barang" value="<?php echo $merk; ?>" />
                             </div>
                           <input type="hidden" name="flag_merk" id="flag_merk" value="0" />
-                    	    <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                    	    <input type="hidden" name="id" value="<?php echo $id_merk_barang; ?>" />
                     	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button>
                     	    <a href="<?php echo site_url('C_merk') ?>" class="btn btn-default">Cancel</a>
                       	</form>

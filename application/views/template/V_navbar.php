@@ -74,7 +74,7 @@
       </li>
       <!-- Penjualan -->
       <li>
-        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
+        <a href="#"><i class="fa fa-shopping-cart fa-fw"></i>
           <span>Penjualan</span>
         </a>
       </li>

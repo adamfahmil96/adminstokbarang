@@ -6,7 +6,7 @@
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-    <div id="wrapper">
+    <div class="wrapper">
         <!-- Navigation -->
         <?php include('template/V_navbar.php'); ?>
         <!-- Page Content -->
@@ -22,6 +22,9 @@
                 <div class="box-header">
                   <h3 class="box-title">Tabel Barang</h3>
                   <?php echo anchor(site_url('C_barang/excel'), 'Expor ke Excel', 'class="btn btn-primary btn-info"'); ?>
+                  <div style="margin-top: 8px" id="message">
+                      <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
+                  </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -70,6 +73,8 @@
     </div>
     <!-- /#wrapper -->
 
+    <input id="getBaseURL" type="hidden" class="default-hidden" value="<?php echo base_url();?>" />
+    
     <!-- jQuery 3 -->
     <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->

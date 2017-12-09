@@ -6,7 +6,7 @@
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-    <div id="wrapper">
+    <div class="wrapper">
         <!-- Navigation -->
         <?php include('template/V_navbar.php'); ?>
         <!-- Page Content -->

@@ -7,53 +7,58 @@
 
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
-        <!-- Navigation -->
-        <?php include('template/V_navbar.php'); ?>
-        <!-- Page Content -->
-        <div class="content-wrapper">
-          <section class="content-header">
-              <div class="col-lg-12">
-                <h1 class="page-header">Merk Barang</h1>
-              </div>
-          </section>
-          <!-- /.content-header -->
-          <section class="content">
+      <!-- Navigation -->
+      <?php include('template/V_navbar.php'); ?>
+      <!-- Page Content -->
+      <div class="content-wrapper">
+        <section class="content-header">
             <div class="col-lg-12">
-              <div class="box box-info">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Ubah Merk Barang</h3>
-                </div>
-                <form class="form-horizontal" action="<?php echo $action; ?>" method="post">
-                  <div class="box-body">
-              	    <div class="form-group">
-                      <label class="col-sm-2 control-label" for="varchar">ID Merk <?php echo form_error('id_merk') ?></label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" name="id_merk" id="id_merk" placeholder="ID Merk" value="<?php echo $id_merk; ?>" />
-                      </div>
-                    </div>
-              	    <div class="form-group">
-                      <label for="varchar" class="col-sm-2 control-label">Merk Barang <?php echo form_error('merk') ?></label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" name="merk" id="merk" placeholder="Merk Barang" value="<?php echo $merk; ?>" />
-                      </div>
-                    </div>
-                    <input type="hidden" name="flag_merk" id="flag_merk" value="0" />
-              	    <input type="hidden" name="id" value="<?php echo $id_merk_barang; ?>" />
-                  </div>
-                  <!-- /.box body -->
-                  <div class="box-footer">
-                    <a href="<?php echo site_url('C_merk') ?>" class="btn btn-default">Cancel</a>
-              	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button>
-                  </div>
-              	</form>
-              </div>
+              <h1 class="page-header">Merk Barang</h1>
             </div>
-            <!-- /.col-lg-12 -->
-          </section>
-          <!-- /.content -->
+        </section>
+        <!-- /.content-header -->
+        <section class="content">
+          <div class="col-lg-12">
+            <div class="box box-info">
+              <div class="box-header with-border">
+                  <h3 class="box-title">Ubah Merk Barang</h3>
+              </div>
+              <form class="form-horizontal" action="<?php echo $action; ?>" method="post">
+                <div class="box-body">
+            	    <div class="form-group">
+                    <label class="col-sm-2 control-label" for="varchar">ID Merk <?php echo form_error('id_merk') ?></label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="id_merk" id="id_merk" placeholder="ID Merk" value="<?php echo $id_merk; ?>" />
+                    </div>
+                  </div>
+            	    <div class="form-group">
+                    <label for="varchar" class="col-sm-2 control-label">Merk Barang <?php echo form_error('merk') ?></label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="merk" id="merk" placeholder="Merk Barang" value="<?php echo $merk; ?>" />
+                    </div>
+                  </div>
+                  <input type="hidden" name="flag_merk" id="flag_merk" value="0" />
+            	    <input type="hidden" name="id" value="<?php echo $id_merk_barang; ?>" />
+                </div>
+                <!-- /.box body -->
+                <div class="box-footer">
+                  <a href="<?php echo site_url('C_merk') ?>" class="btn btn-default">Cancel</a>
+            	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button>
+                </div>
+            	</form>
+            </div>
+          </div>
+          <!-- /.col-lg-12 -->
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /#page-wrapper -->
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0
         </div>
-        <!-- /#page-wrapper -->
-
+        <strong>Copyright &copy; 2017 - Developer by <a href="http://adamfahmil.my.id/" target="_blank">Adam Fahmil</a>.</strong> All rights reserved.
+      </footer>
     </div>
     <!-- /#wrapper -->
 

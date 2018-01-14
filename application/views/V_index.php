@@ -86,6 +86,12 @@
         </section>
       </div>
       <!-- /#page-wrapper -->
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0
+        </div>
+        <strong>Copyright &copy; 2017 - Developer by <a href="http://adamfahmil.my.id/" target="_blank">Adam Fahmil</a>.</strong> All rights reserved.
+      </footer>
     </div>
     <!-- /#wrapper -->
 

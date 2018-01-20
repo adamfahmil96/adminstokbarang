@@ -52,7 +52,15 @@
                       	<td><?php echo $c_pembeli_hrv->nama_pembeli ?></td>
                       	<td><?php echo $c_pembeli_hrv->alamat_pembeli ?></td>
                       	<td><?php echo $c_pembeli_hrv->telp_pembeli ?></td>
-                      	<td><?php echo $c_pembeli_hrv->status_pembeli ?></td>
+                      	<td>
+                          <?php
+                            if ($c_pembeli_hrv->status_pembeli == "P") {
+                              echo "Pelanggan";
+                            } elseif ($c_pembeli_hrv->status_pembeli == "K") {
+                              echo "Konsumen";
+                            }
+                          ?>
+                        </td>
                       	<td style="text-align:center" width="200px">
                       		<?php
                       		// echo anchor(site_url('C_pembeli/read/'.$c_pembeli_hrv->id),'Read');
@@ -81,6 +89,8 @@
       </footer>
     </div>
     <!-- /#wrapper -->
+
+    <input id="getBaseURL" type="hidden" class="default-hidden" value="<?php echo base_url();?>" />
 
     <!-- jQuery 3 -->
     <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>

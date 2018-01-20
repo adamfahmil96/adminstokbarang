@@ -30,3 +30,7 @@ Catatan (02-12-2017)
 		- telp_pembeli	varchar(50)
 		- status_pembeli	varchar(50)
 		- flag_pembeli	tinyint(4)
+		Catatan:
+			* id_pembeli : Pelanggan (Pemesan) -> diawali huruf "P"
+										 Konsumen -> diawali huruf "K"
+										 Setelah itu diteruskan dengan format tanggal (hari,bulan,tahun) dan waktu (jam,menit,detik)
